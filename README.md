@@ -33,7 +33,7 @@ Mongo Express allows you to visually explore and manage your MongoDB database.
 Your Node app connects to MongoDB using the container hostname:
 
 ```js
-mongodb://sanjay:gehlot@mongodb:27017
+mongodb://your-username:your-pass@mongodb:27017
 ```
 
 This works because all services share the same Docker network, and Docker DNS resolves `mongodb` → MongoDB container.
