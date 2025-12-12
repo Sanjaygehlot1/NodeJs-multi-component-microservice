@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: your-username
+      MONGO_INITDB_ROOT_PASSWORD: your-pass
+    ports:
+      - "27017:27017"
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: your-username
+      ME_CONFIG_MONGODB_ADMINPASSWORD: your-pass
+      ME_CONFIG_MONGODB_URL: mongodb://your-username:your-pass@mongodb:27017/
+    depends_on:
+      - mongodb
